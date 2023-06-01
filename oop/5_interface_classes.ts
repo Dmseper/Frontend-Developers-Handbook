@@ -65,3 +65,27 @@ class CarRepo implements  Repository<Car> {
   }
 
 }
+
+
+// Specify generic type 'K' with key-word 'extends'
+  class User1<T, K extends number> {
+
+    constructor(public name: T, public age: K) {}
+
+    public getPass(): string {
+      return `${this.name}${this.age}`;
+    }
+
+    public getSecret(): number {
+      return this.age**2;
+    }
+  }
+
+const yauhen = new User1('Yauhen', 31);
+const leo = new User1(123, 321);
+
+/*
+  Error:
+  Argument of type '"20"' is not assignable to parameter of type 'number'
+*/
+const max = new User1('Max', '20');
