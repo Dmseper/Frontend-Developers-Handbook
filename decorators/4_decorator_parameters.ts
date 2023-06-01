@@ -1,22 +1,29 @@
-function readable(onlyRead : boolean){
+function logParameter(target: any, key : string, index : number) {
+  let metadataKey = `__log_${key}_parameters`;
 
-  return function (target: Object, propertyKey: string, descriptor: PropertyDescriptor) {
-    descriptor.writable = !onlyRead;
-  };
+  if (Array.isArray(target[metadataKey])) {
+    target[metadataKey].push(index);
+  }
+  else {
+    target[metadataKey] = [index];
+  }
 }
+
 
 class User {
 
-  name: string;
+  private name: string;
   constructor(name: string){
     this.name = name;
   }
 
-  @readable(false)
+  setName(@logParameter name: string){
+    this.name = name;
+  }
   print():void{
     console.log(this.name);
   }
 }
 let tom = new User("Tom");
-tom.print = function(){console.log("print has been changed");}
-tom.print();  // Tom
+tom.setName("Bob");
+tom.setName("Sam");

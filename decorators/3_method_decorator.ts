@@ -1,13 +1,4 @@
 
-interface PropertyDescriptor{
-  configurable?: boolean;
-  enumerable?: boolean;
-  value?: any;
-  writable?: boolean;
-  get? (): any;
-  set? (v: any): void;
-}
-
 function deprecated(target: any, propertyName: string, descriptor: PropertyDescriptor){
   console.log("Method is deprecated");
 }
@@ -40,6 +31,7 @@ function deprecated(target: any, propertyName: string, descriptor: PropertyDescr
 
 function logMethod (target: Object, propertyKey: string, descriptor: PropertyDescriptor) {
   console.log(propertyKey)
+  descriptor.writable = true
 }
 
 
@@ -48,13 +40,13 @@ class User {
   constructor(public userName: string, public age: number) {
   }
   @logMethod
-  public getUser ():string {
-    return `${this.userName}`
+  getUser ():void {
+    console.log(`${this.userName}`)
   }
 }
 
 const ivan = new User("Ivan", 23)
-console.log(ivan.getUser())
+ivan.getUser() 
 
 let alex = new User("Alex", 44);
 let vlad = new User("Vlad", 44);
