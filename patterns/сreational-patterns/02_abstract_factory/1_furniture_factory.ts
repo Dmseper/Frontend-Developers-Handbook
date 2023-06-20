@@ -1,3 +1,7 @@
+//Позволяет создавать семейства связных объектов,
+//не привязываясь к конкретным классам создаваемых объектов
+
+
 interface IFactoryFurniture {
   createChair: () => IFurniture
   createSofa: () => IFurniture

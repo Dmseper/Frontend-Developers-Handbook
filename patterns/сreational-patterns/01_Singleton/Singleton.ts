@@ -1,4 +1,8 @@
-import {generateRandomNumber} from "../../utils/generateArrayNumbers";
+//Гарантирует, что у класса есть только один экземпляр,
+//и предоставляет к нему глобалюную точку доступа
+
+
+import {generateRandomNumber} from "../../../utils/generateArrayNumbers";
 
 class DataBase {
   port?: number
