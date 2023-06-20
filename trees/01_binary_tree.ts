@@ -9,7 +9,7 @@ class BinaryTree {
   }
 
   addVertex(value: number) {
-    const newVertex: Vertex | null = new Vertex(value)
+    const newVertex: Vertex  = new Vertex(value)
     if (!this.root) {
       this.root = newVertex
       return

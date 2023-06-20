@@ -1,4 +1,4 @@
-import {generateRandomNumber} from "../utils/generateArrayNumbers";
+import {generateRandomNumber} from "../../utils/generateArrayNumbers";
 
 class DataBase {
   port?: number
