@@ -48,7 +48,7 @@ class Order {
   }
 }
 
-// Использование
+
 const order = new Order(100, 2, new DistanceDeliveryStrategy());
 console.log(order.calculateDeliveryCost()); // 500 (100 * 5)
 
