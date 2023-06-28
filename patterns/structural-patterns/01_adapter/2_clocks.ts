@@ -1,10 +1,10 @@
 // Интерфейс цифровых часов
-interface DigitalClock {
+interface IDigitalClock {
   displayTime(): void;
 }
 
 // Цифровые часы
-class DigitalClockImpl implements DigitalClock {
+class DigitalClockImpl implements IDigitalClock {
   displayTime(): void {
     const now = new Date();
     const hours = now.getHours().toString()
@@ -15,13 +15,13 @@ class DigitalClockImpl implements DigitalClock {
 }
 
 // Интерфейс часов со стрелками
-interface AnalogClock {
+interface IAnalogClock {
   setHandsRotation(hours: number, minutes: number, seconds: number): void;
   displayTime(): void;
 }
 
 // Часы со стрелками
-class AnalogClockImpl implements AnalogClock {
+class AnalogClock implements IAnalogClock {
   private hours: number = 0;
   private minutes: number = 0;
   private seconds: number = 0;
@@ -41,10 +41,10 @@ class AnalogClockImpl implements AnalogClock {
 }
 
 // Адаптер для часов со стрелками
-class AnalogClockAdapter implements DigitalClock {
-  private analogClock: AnalogClock;
+class AnalogClockAdapter implements IDigitalClock {
+  private analogClock: IAnalogClock;
 
-  constructor(analogClock: AnalogClock) {
+  constructor(analogClock: IAnalogClock) {
     this.analogClock = analogClock;
   }
 
@@ -53,19 +53,12 @@ class AnalogClockAdapter implements DigitalClock {
   }
 }
 
-// Клиентский код
-const digitalClock: DigitalClock = new DigitalClockImpl();
-digitalClock.displayTime();
-// Output:
-// Digital Clock: 12:34:56
+const digitalClock: IDigitalClock = new DigitalClockImpl();
+digitalClock.displayTime(); // Digital Clock: 12:34:56
 
-const analogClock: AnalogClock = new AnalogClockImpl();
+const analogClock: IAnalogClock = new AnalogClock();
 analogClock.setHandsRotation(10, 45, 30);
-analogClock.displayTime();
-// Output:
-// Analog Clock: 10:45:30
+analogClock.displayTime(); // Analog Clock: 10:45:30
 
-const analogClockAdapter: DigitalClock = new AnalogClockAdapter(analogClock);
-analogClockAdapter.displayTime();
-// Output:
-// Analog Clock: 10:45:30
+const analogClockAdapter: IDigitalClock = new AnalogClockAdapter(analogClock);
+analogClockAdapter.displayTime(); // Analog Clock: 10:45:30
