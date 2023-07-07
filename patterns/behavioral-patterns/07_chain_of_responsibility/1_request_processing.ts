@@ -1,6 +1,6 @@
 // Базовый класс обработчика заявки
 abstract class RequestHandler {
-  public nextHandler: RequestHandler | null;
+  protected nextHandler: RequestHandler | null = null;
 
   setNextHandler(handler: RequestHandler) {
     this.nextHandler = handler;
