@@ -1,4 +1,5 @@
 import {generateArrayNumbers} from "../utils/generateArrayNumbers";
+
 const arrayNumbers: Array<number> = generateArrayNumbers(25, true)
 let iterationCounter = 0
 
@@ -19,5 +20,5 @@ function selectionSort(array: Array<number>) {
 }
 
 console.log(arrayNumbers)
-console.log("sorted array",selectionSort(arrayNumbers))
+console.log("sorted array", selectionSort(arrayNumbers))
 console.log("iterationCounter = ", iterationCounter)

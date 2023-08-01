@@ -36,9 +36,10 @@ const obj2: Partial<Props> = {a: 5}
 interface PageInfo {
   title: string
 }
+
 type Page = "home" | "about" | "contact"
 
-const guidePages:Record<Page, PageInfo> = {
+const guidePages: Record<Page, PageInfo> = {
   about: {title: 'about'},
   contact: {title: 'contact'},
   home: {title: 'home'},
@@ -54,7 +55,7 @@ interface Todo {
   createdAt: number;
 }
 
-type TodoPreview1 = Pick<Todo, "title" | "completed" >;
+type TodoPreview1 = Pick<Todo, "title" | "completed">;
 
 const todo1: TodoPreview1 = {
   title: "Clean room",
@@ -131,6 +132,7 @@ function toHex(this: Number) {
 function numberToString(n: ThisParameterType<typeof toHex>) {
   return toHex.apply(n);
 }
+
 // ====== #13 - InstanceType ====== //
 //Конструирует тип, состоящий из типа экземпляра функции-конструктора в Type
 class C {

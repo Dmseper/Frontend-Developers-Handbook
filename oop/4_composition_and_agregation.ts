@@ -18,6 +18,7 @@ class Engine {
     console.log('Двигатель работает')
   }
 }
+
 //агрегация
 class Conditioner {
   //В данном случае класс Conditioner находится вне зависимости от каких либо классов
@@ -26,6 +27,7 @@ class Conditioner {
 
 class Flat {
   conditioner: Conditioner
+
   constructor(conditioner: Conditioner) {
     this.conditioner = conditioner
   }
@@ -36,6 +38,7 @@ class Car {
   engine: Engine
   wheels: Wheel[]
   conditioner: Conditioner
+
   constructor(conditioner: Conditioner) {
 
     //Композиция

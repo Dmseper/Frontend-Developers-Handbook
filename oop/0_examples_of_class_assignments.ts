@@ -69,11 +69,11 @@ class AccessorsWithUser {
     this.name = name
   }
 
-  setAge(age: number) {
+  set myAge(age: number) {
     this.age = age
   }
 
-  set myAge(age: number) {
+  setAge(age: number) {
     this.age = age
   }
 }
@@ -140,7 +140,7 @@ abstract class AbstractUser {
     console.log(this.name)
   }
 
-  abstract getPass():string
+  abstract getPass(): string
 }
 
 class tempClass extends AbstractUser {
@@ -154,6 +154,7 @@ class tempClass extends AbstractUser {
     return "test!!!";
   }
 }
+
 const abstractAlex = new tempClass(23)
 console.log('abstractAlex', abstractAlex)
 console.log('abstractAlex', abstractAlex.getPass())

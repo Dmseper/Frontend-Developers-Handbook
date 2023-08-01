@@ -4,7 +4,9 @@
 // Интерфейс посетителя
 interface Visitor {
   visitPlaceA(place: PlaceA): void;
+
   visitPlaceB(place: PlaceB): void;
+
   // Добавьте методы посещения для других типов мест
 }
 
@@ -36,6 +38,7 @@ class InfoVisitor implements Visitor {
   visitPlaceB(place: PlaceB) {
     console.log("Место B: Информация о месте B");
   }
+
   // Реализуйте методы посещения для других типов мест
 }
 

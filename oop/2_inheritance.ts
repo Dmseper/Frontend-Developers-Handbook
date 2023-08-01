@@ -9,6 +9,7 @@ class Person {
       this._age = value
     }
   }
+
   get fullName() {
     return `ФИО: ${this._firstName} ${this._lastName}`
   }

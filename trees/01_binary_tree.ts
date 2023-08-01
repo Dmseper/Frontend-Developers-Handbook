@@ -9,7 +9,7 @@ class BinaryTree {
   }
 
   addVertex(value: number) {
-    const newVertex: Vertex  = new Vertex(value)
+    const newVertex: Vertex = new Vertex(value)
     if (!this.root) {
       this.root = newVertex
       return
@@ -92,13 +92,13 @@ class BinaryTree {
     const queue = [this.root]
 
     while (queue.length) {
-        const vertex = queue.shift()
-        callback(vertex)
+      const vertex = queue.shift()
+      callback(vertex)
 
-      if(vertex.left) {
+      if (vertex.left) {
         queue.push(vertex.left)
       }
-      if(vertex.right) {
+      if (vertex.right) {
         queue.push(vertex.right)
       }
 

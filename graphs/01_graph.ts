@@ -34,7 +34,7 @@ class Graph {
 
     let neighbours = this.graph.get(vertex) ?? [];
 
-    for (let i = 0; i < neighbours.length ; i++) {
+    for (let i = 0; i < neighbours.length; i++) {
       let neighbour = neighbours[i];
       if (!visited[neighbour]) {
         this.depthFirstSearch(neighbour, visited);
@@ -64,6 +64,7 @@ class Graph {
     }
   }
 }
+
 let vertices = [0, 1, 2, 3, 4, 5];
 let graph = new Graph(vertices.length);
 

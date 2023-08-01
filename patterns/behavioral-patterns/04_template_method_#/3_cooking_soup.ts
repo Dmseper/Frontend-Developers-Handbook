@@ -15,6 +15,7 @@ abstract class Soup {
   }
 
   abstract prepareIngredients(): void;
+
   abstract cookSoup(): void;
 
   serveSoup(): void {

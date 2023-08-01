@@ -9,7 +9,7 @@ function recursiveBinarySearch(array: Array<number>, searchableItem: number, sta
   if (searchableItem === array[middle]) {
     return middle
   }
-  
+
   return searchableItem < array[middle]
     ? recursiveBinarySearch(array, searchableItem, start, middle - 1)
     : recursiveBinarySearch(array, searchableItem, middle + 1, end)

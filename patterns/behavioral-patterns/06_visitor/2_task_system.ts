@@ -6,7 +6,9 @@
 // Интерфейс посетителя
 interface TaskVisitor {
   visitDevelopmentTask(task: DevelopmentTask): void;
+
   visitTestingTask(task: TestingTask): void;
+
   // Добавьте методы посещения для других типов задач
 }
 
@@ -38,6 +40,7 @@ class TaskActionVisitor implements TaskVisitor {
   visitTestingTask(task: TestingTask) {
     console.log("Выполняются действия для задачи на тестирование");
   }
+
   // Реализуйте методы посещения для других типов задач
 }
 

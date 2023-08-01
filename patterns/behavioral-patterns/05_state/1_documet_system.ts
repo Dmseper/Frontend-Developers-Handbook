@@ -8,10 +8,13 @@
 abstract class State {
   protected document: Document;
 
-  constructor(protected document: Document) {}
+  constructor(protected document: Document) {
+  }
 
   public abstract approve(): void;
+
   public abstract reject(): void;
+
   public abstract revise(): void;
 }
 

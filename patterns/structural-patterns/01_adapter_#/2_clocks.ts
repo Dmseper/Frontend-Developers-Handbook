@@ -17,6 +17,7 @@ class DigitalClockImpl implements IDigitalClock {
 // Интерфейс часов со стрелками
 interface IAnalogClock {
   setHandsRotation(hours: number, minutes: number, seconds: number): void;
+
   displayTime(): void;
 }
 

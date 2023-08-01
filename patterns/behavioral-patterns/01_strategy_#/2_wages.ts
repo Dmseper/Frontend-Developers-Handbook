@@ -6,12 +6,13 @@
 // При разработке использовать поведенческий паттерн проектирования «Стратегия».
 
 
-enum SalaryByHour  {
+enum SalaryByHour {
   FULL_TIME = 400,
   SHORTED = 360,
-  SMALLEST= 200
+  SMALLEST = 200
 
 }
+
 // Интерфейс стратегии расчета з/п
 interface Wages {
   calculateWages(): number;
@@ -27,7 +28,7 @@ class FullTime implements Wages {
 
 class SmallestWeek implements Wages {
   calculateWages(): number {
-  const hours = 23
+    const hours = 23
     return SalaryByHour.SMALLEST * hours;
   }
 }

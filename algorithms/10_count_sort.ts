@@ -1,6 +1,4 @@
-import {generateArrayNumbers} from "../utils/generateArrayNumbers";
-
-const arrayNumbers: Array<number> = [1,4,2,7,5,3,2,7,8,12,3,11,33]
+const arrayNumbers: Array<number> = [1, 4, 2, 7, 5, 3, 2, 7, 8, 12, 3, 11, 33]
 let iterationCounter = 0
 
 function countSort(array: Array<number>, maxElement: number): Array<number> {
@@ -10,8 +8,8 @@ function countSort(array: Array<number>, maxElement: number): Array<number> {
   // iterationCounter += maxElement + 1 // добавить, если мы не знаем какой длины массив и каких чисел
 
   array.forEach(value => {
-    orderOfNumbers[value]++
-    iterationCounter++;
+      orderOfNumbers[value]++
+      iterationCounter++;
     }
   );
 

@@ -1,9 +1,6 @@
-
-
 const logProperty = (target: Object, propertyKey: string | symbol) => {
   console.log(propertyKey)
 }
-
 
 
 class User {
@@ -15,11 +12,11 @@ class User {
   @format
   name: string
 
-  constructor( name: string, public age?: number) {
+  constructor(name: string, public age?: number) {
     this.name = name
   }
 
-  getUser ():void {
+  getUser(): void {
     console.log(`${this.name}`)
   }
 }
@@ -40,13 +37,13 @@ tom.name = "To";
 tom.getUser();
 
 function format() {
-  return function(target: Object, propertyKey: string) {
-    let value : string;
-    const getter = function() {
+  return function (target: Object, propertyKey: string) {
+    let value: string;
+    const getter = function () {
       return "Mr./Ms." + value;     // изменяем возвращаемое значение
     };
-    const setter = function(newVal: string) {
-      if(newVal.length > 2) {   // добавляем проверку на длину строки
+    const setter = function (newVal: string) {
+      if (newVal.length > 2) {   // добавляем проверку на длину строки
         value = newVal
       }
     };

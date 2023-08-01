@@ -35,6 +35,7 @@ class GameFacade {
     this.monsterManager.clearMonsters();
   }
 }
+
 class Player {
   public spawnPlayer(): void {
     // Реализация кода для создания игрока

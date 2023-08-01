@@ -1,9 +1,11 @@
-
 abstract class Smartphone {
   abstract getModel(): string;
+
   abstract getOS(): string;
+
   abstract getPrice(): number;
 }
+
 class IPhone extends Smartphone {
   getModel(): string {
     return "iPhone";
@@ -48,7 +50,6 @@ class SamsungFactory extends SmartphoneFactory {
     return new Samsung();
   }
 }
-
 
 
 const iphoneFactory = new IPhoneFactory();

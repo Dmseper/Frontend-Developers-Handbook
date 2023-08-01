@@ -6,8 +6,10 @@ abstract class Tank {
   }
 
   abstract move(): void;
+
   abstract fire(): void;
 }
+
 abstract class Weapon {
   abstract fire(): void;
 }

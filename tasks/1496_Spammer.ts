@@ -1,4 +1,3 @@
-
 class Spammer {
   private _numberOfSubmits: number
   private _teamNames: Set<string>
@@ -23,7 +22,8 @@ class Spammer {
     this._spammerTeamNames = tempSpammerTeamNames
     this._numberOfSubmits = numberOfSubmits
   }
-  public getSpammers(){
+
+  public getSpammers() {
     return this._spammerTeamNames
   }
 }
@@ -33,7 +33,6 @@ const teams = ["naucoder", "iceman", "abikbaev", "abikbaev", "petr", "abikbaev",
 const count = 11
 
 const spam = new Spammer(count, teams)
-
 
 
 console.log(spam.getSpammers())

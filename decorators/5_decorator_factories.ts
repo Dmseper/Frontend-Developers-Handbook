@@ -1,6 +1,6 @@
-function regex(pattern: string){
+function regex(pattern: string) {
   let expression = new RegExp(pattern);
-  return function regex(target: Object, propertyName: string){
+  return function regex(target: Object, propertyName: string) {
     let propertyValue = this[propertyName];
 
     // геттер
@@ -11,10 +11,9 @@ function regex(pattern: string){
     // сеттер
     let setter = function (newVal: string) {
       let isValid: boolean = expression.test(newVal);
-      if(isValid === false){
+      if (isValid === false) {
         throw new Error(`Value ${newVal} does not match ${pattern}`);
-      }
-      else{
+      } else {
         console.log(`${newVal} is valid`);
       }
     };
@@ -29,7 +28,8 @@ function regex(pattern: string){
     }
   }
 }
-class Account{
+
+class Account {
 
   @regex("^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$")
   email: string;
@@ -37,9 +37,11 @@ class Account{
   @regex("^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$")
   phone: string;
 
-  constructor(email: string, phone: string){
-    this.email = email; this.phone = phone;
+  constructor(email: string, phone: string) {
+    this.email = email;
+    this.phone = phone;
   }
 }
+
 let acc = new Account("bir@gmail.com", "+23451235678");
 acc.email = "bir_iki_yedi";

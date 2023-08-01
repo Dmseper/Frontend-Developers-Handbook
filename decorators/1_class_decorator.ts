@@ -13,11 +13,11 @@
 const logClass = (constructor: Function) => {
   console.log(constructor)
 
-  let newConstructor: Function = function(name:string){
+  let newConstructor: Function = function (name: string) {
     console.log("Создание нового экземпляра");
     this.name = name;
     this.age = 23;
-    this.getUser = function():void{
+    this.getUser = function (): void {
       console.log(this.name, this.age);
     }
   }
@@ -31,7 +31,7 @@ class User {
   constructor(public userName: string, public age: number) {
   }
 
-  getUser ():string {
+  getUser(): string {
     return `${this.userName}`
   }
 }

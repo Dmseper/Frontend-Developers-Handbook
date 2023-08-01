@@ -14,7 +14,7 @@
 
 
 interface Repository<T> {
-  create: (obj: T)=> T;
+  create: (obj: T) => T;
   get: () => T;
   delete: (obj: T) => T;
   update: (obj: T) => T;
@@ -45,9 +45,10 @@ class UserRepo implements Repository<User> {
 
 }
 
-class  Car {}
+class Car {
+}
 
-class CarRepo implements  Repository<Car> {
+class CarRepo implements Repository<Car> {
   create(obj: Car): Car {
     return undefined;
   }
@@ -68,18 +69,19 @@ class CarRepo implements  Repository<Car> {
 
 
 // Specify generic type 'K' with key-word 'extends'
-  class User1<T, K extends number> {
+class User1<T, K extends number> {
 
-    constructor(public name: T, public age: K) {}
-
-    public getPass(): string {
-      return `${this.name}${this.age}`;
-    }
-
-    public getSecret(): number {
-      return this.age**2;
-    }
+  constructor(public name: T, public age: K) {
   }
+
+  public getPass(): string {
+    return `${this.name}${this.age}`;
+  }
+
+  public getSecret(): number {
+    return this.age ** 2;
+  }
+}
 
 const yauhen = new User1('Yauhen', 31);
 const leo = new User1(123, 321);

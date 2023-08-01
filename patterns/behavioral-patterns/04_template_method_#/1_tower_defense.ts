@@ -6,7 +6,9 @@
 // Базовый класс для врагов
 abstract class Enemy {
   abstract spawn(): void;
+
   abstract move(): void;
+
   abstract attack(): void;
 
   // Шаблонный метод, определяющий порядок выполнения этапов игры

@@ -22,6 +22,7 @@ abstract class RequestHandler {
   }
 
   abstract canHandle(request: AppRequest): boolean;
+
   abstract processRequest(request: AppRequest): void;
 }
 

@@ -7,6 +7,7 @@ interface IFactoryFurniture {
   createSofa: () => IFurniture
   createTable: () => IFurniture
 }
+
 interface IFurniture {
   getHeight: () => number
   getWidth: () => number
@@ -42,7 +43,7 @@ class ModernFurniture implements IFactoryFurniture {
   }
 }
 
-class ModernChair implements IFurniture{
+class ModernChair implements IFurniture {
   getHeight(): number {
     return 50;
   }
@@ -56,7 +57,8 @@ class ModernChair implements IFurniture{
   }
 
 }
-class ModernTable implements IFurniture{
+
+class ModernTable implements IFurniture {
   getHeight(): number {
     return 100;
   }
@@ -70,7 +72,8 @@ class ModernTable implements IFurniture{
   }
 
 }
-class ModernSofa implements IFurniture{
+
+class ModernSofa implements IFurniture {
   getHeight(): number {
     return 100;
   }
@@ -85,7 +88,7 @@ class ModernSofa implements IFurniture{
 
 }
 
-class VictorianSofa implements IFurniture{
+class VictorianSofa implements IFurniture {
   getHeight(): number {
     return 120;
   }
@@ -99,7 +102,8 @@ class VictorianSofa implements IFurniture{
   }
 
 }
-class VictorianTable implements IFurniture{
+
+class VictorianTable implements IFurniture {
   getHeight(): number {
     return 120;
   }
@@ -113,7 +117,8 @@ class VictorianTable implements IFurniture{
   }
 
 }
-class VictorianChair implements IFurniture{
+
+class VictorianChair implements IFurniture {
   getHeight(): number {
     return 120;
   }

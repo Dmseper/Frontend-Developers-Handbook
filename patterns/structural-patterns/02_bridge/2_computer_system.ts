@@ -39,15 +39,19 @@ class Keyboard extends Device {
 }
 
 class HDMIInterface extends Interface {
-  connectDevice(): void {}
+  connectDevice(): void {
+  }
 
-  disconnectDevice(): void {}
+  disconnectDevice(): void {
+  }
 }
 
 class USBInterface extends Interface {
-  connectDevice(): void {}
+  connectDevice(): void {
+  }
 
-  disconnectDevice(): void {}
+  disconnectDevice(): void {
+  }
 }
 
 const hdmiInterface = new HDMIInterface();

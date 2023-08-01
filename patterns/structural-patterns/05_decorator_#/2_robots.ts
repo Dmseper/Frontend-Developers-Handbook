@@ -6,6 +6,7 @@
 
 abstract class Robot {
   public abstract getDescription(): string;
+
   public abstract performTask(): void;
 }
 

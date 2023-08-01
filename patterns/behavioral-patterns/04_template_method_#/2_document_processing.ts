@@ -7,8 +7,11 @@
 abstract class DocumentProcessor {
 
   abstract loadDocument(): void;
+
   abstract checkFormat(): void;
+
   abstract processContent(): void;
+
   abstract saveDocument(): void;
 
   // Шаблонный метод для обработки документа

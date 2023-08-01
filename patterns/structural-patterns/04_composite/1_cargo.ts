@@ -12,8 +12,10 @@ abstract class Cargo {
   }
 
   public abstract getWeight(): number;
+
   public abstract print(): void;
 }
+
 class Container extends Cargo {
   private cargos: Cargo[] = [];
 

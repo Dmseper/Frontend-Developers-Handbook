@@ -5,14 +5,15 @@
 import {generateRandomNumber} from "../../../utils/generateArrayNumbers";
 
 class DataBase {
-  port?: number
   private static instance: DataBase
+  port?: number
+
   constructor() {
-    if(DataBase.instance) {
+    if (DataBase.instance) {
       return DataBase.instance
     }
 
-    this.port = generateRandomNumber(1,100)
+    this.port = generateRandomNumber(1, 100)
     DataBase.instance = this
   }
 

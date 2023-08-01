@@ -1,7 +1,8 @@
 class Person {
   constructor(protected _firstName: string, private _lastName: string, private _age: number) {
   }
-  greeting(){
+
+  greeting() {
     console.log(`Привет, меня зовут ${this._firstName}`)
   }
 }
@@ -11,7 +12,8 @@ class Employee extends Person {
   constructor(_firstName: string, _lastName: string, _age: number, private _inn: number, private _number: number, private _snils: string) {
     super(_firstName, _lastName, _age)
   }
-  greeting(){
+
+  greeting() {
     console.log(`Привет, я работник и меня зовут ${this._firstName}`)
   }
 }
@@ -20,7 +22,8 @@ class Developer extends Employee {
   constructor(_firstName: string, _lastName: string, _age: number, _inn: number, _number: number, _snils: string, private _level: string, private _language: string) {
     super(_firstName, _lastName, _age, _inn, _number, _snils)
   }
-  greeting(){
+
+  greeting() {
     console.log(`Привет, я разработчик и меня зовут ${this._firstName}`)
   }
 }
@@ -37,9 +40,9 @@ Petr.greeting()
 const personList: Person[] = [Alex, Ivan, Petr]
 
 function massGreeting(persons: Person[]) {
-    persons.forEach((item: Person)=> {
-      item.greeting()
-    })
+  persons.forEach((item: Person) => {
+    item.greeting()
+  })
 }
 
 massGreeting(personList)

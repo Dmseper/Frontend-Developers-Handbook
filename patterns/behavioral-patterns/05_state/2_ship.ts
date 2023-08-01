@@ -4,7 +4,9 @@
 // Интерфейс состояния корабля
 interface ShipState {
   dock(): void;
+
   sail(): void;
+
   repair(): void;
 }
 

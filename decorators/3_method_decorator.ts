@@ -1,5 +1,4 @@
-
-function deprecated(target: any, propertyName: string, descriptor: PropertyDescriptor){
+function deprecated(target: any, propertyName: string, descriptor: PropertyDescriptor) {
   console.log("Method is deprecated");
 }
 
@@ -29,7 +28,7 @@ function deprecated(target: any, propertyName: string, descriptor: PropertyDescr
 // tom.print();  // Tom
 //
 
-function logMethod (target: Object, propertyKey: string, descriptor: PropertyDescriptor) {
+function logMethod(target: Object, propertyKey: string, descriptor: PropertyDescriptor) {
   console.log(propertyKey)
   descriptor.writable = true
 }
@@ -39,14 +38,15 @@ class User {
 
   constructor(public userName: string, public age: number) {
   }
+
   @logMethod
-  getUser ():void {
+  getUser(): void {
     console.log(`${this.userName}`)
   }
 }
 
 const ivan = new User("Ivan", 23)
-ivan.getUser() 
+ivan.getUser()
 
 let alex = new User("Alex", 44);
 let vlad = new User("Vlad", 44);

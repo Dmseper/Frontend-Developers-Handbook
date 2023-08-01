@@ -11,7 +11,7 @@ function insertionSort(array: Array<number>): Array<number> {
     let k = index, tempValue
     sortedArr.push(item)
 
-    while (k > 0 && sortedArr[k]  < sortedArr[k - 1]) {
+    while (k > 0 && sortedArr[k] < sortedArr[k - 1]) {
 
       tempValue = sortedArr[k - 1]
       sortedArr[k - 1] = sortedArr[k]
@@ -21,7 +21,7 @@ function insertionSort(array: Array<number>): Array<number> {
       k--
     }
   })
-  
+
   return sortedArr
 }
 

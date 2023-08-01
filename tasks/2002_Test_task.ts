@@ -2,22 +2,24 @@ interface IAuth {
   typeOfOperations: Operations
   password: string
 }
+
 enum Operations {
-  LOGIN= "login",
-  LOGOUT="logout",
-  REGISTER="register",
+  LOGIN = "login",
+  LOGOUT = "logout",
+  REGISTER = "register",
 }
 
 enum Message {
   REGISTER_CORRECT = "Success: new user added",
-  PASSWORD_CORRECT= "Success: user logged in",
-  PASSWORD_UNCORRECT= "Fail: already logged in",
-  USER_EXIST= "Fail: user already exists",
-  USER_LOGGED= "Fail: already logged in",
-  USER_NOT_FOUND ="Fail: no such user",
-  USER_ALREADY_LOGOUT ="Fail: already logged out",
-  USER_LOGOUT="Success: user logged out",
+  PASSWORD_CORRECT = "Success: user logged in",
+  PASSWORD_UNCORRECT = "Fail: already logged in",
+  USER_EXIST = "Fail: user already exists",
+  USER_LOGGED = "Fail: already logged in",
+  USER_NOT_FOUND = "Fail: no such user",
+  USER_ALREADY_LOGOUT = "Fail: already logged out",
+  USER_LOGOUT = "Success: user logged out",
 }
+
 class Auth {
 
   private _userData: Map<string, IAuth> = new Map() // logig / password
@@ -45,8 +47,7 @@ class Auth {
         if (this.checkIsCorrectPassword(login, password)) {
           console.log(Message.PASSWORD_CORRECT)
           return;
-        }
-        else console.log(Message.PASSWORD_UNCORRECT)
+        } else console.log(Message.PASSWORD_UNCORRECT)
 
         if (this.checkIsUserInSystem(login)) {
           console.log(Message.USER_LOGGED)
@@ -62,22 +63,24 @@ class Auth {
         }
         if (!this.checkIsUserInSystem(login)) {
           console.log(Message.USER_ALREADY_LOGOUT)
-        }
-        else console.log(Message.USER_LOGOUT)
+        } else console.log(Message.USER_LOGOUT)
       }
 
     })
   }
 
-  checkIsUserRegistered(login:string) {
+  checkIsUserRegistered(login: string) {
     return this._userData.has(login)
   }
-  checkIsUserInSystem(login:string){
+
+  checkIsUserInSystem(login: string) {
     return this._userData.get(login)?.typeOfOperations === Operations.LOGIN
   }
-  checkIsCorrectPassword(login:string, password:string) {
+
+  checkIsCorrectPassword(login: string, password: string) {
     return this._userData.get(login)?.password === password
   }
+
   // loginUser(login:string, password: string) {
   //   this._userData.set(login,{typeOfOperations:Operations.LOGIN, password})
   // }

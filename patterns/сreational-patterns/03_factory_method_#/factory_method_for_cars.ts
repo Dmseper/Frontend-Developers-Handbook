@@ -5,7 +5,9 @@
 // Абстрактный класс для автомобилей
 abstract class Car {
   abstract getModel(): string;
+
   abstract getEngine(): string;
+
   abstract getPrice(): number;
 }
 
@@ -14,9 +16,11 @@ class Sedan extends Car {
   getModel(): string {
     return "Sedan";
   }
+
   getEngine(): string {
     return "1.6L";
   }
+
   getPrice(): number {
     return 20000;
   }
@@ -26,9 +30,11 @@ class SUV extends Car {
   getModel(): string {
     return "SUV";
   }
+
   getEngine(): string {
     return "2.0L";
   }
+
   getPrice(): number {
     return 30000;
   }

@@ -25,6 +25,7 @@ function binarySearch(array: Array<number>, searchableItem: number) {
   }
   return position
 }
+
 console.log(arrayNumbers)
-console.log("position of searchable item = ",binarySearch(arrayNumbers, 8))
+console.log("position of searchable item = ", binarySearch(arrayNumbers, 8))
 console.log("iterationCounter = ", iterationCounter)
