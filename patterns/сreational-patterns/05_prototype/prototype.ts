@@ -7,7 +7,7 @@
 
 
 // Абстрактный класс Документ
-abstract class Document {
+abstract class Documents {
   protected title: string;
   protected creationDate: Date;
   protected author: string;
@@ -19,7 +19,7 @@ abstract class Document {
     this.author = author;
   }
 
-  abstract clone(): Document;
+  abstract clone(): Documents;
 
   // Методы получения свойств документа
   getTitle(): string {
@@ -44,12 +44,12 @@ abstract class Document {
 }
 
 // Конкретный класс Документ-Прототип
-class Contract extends Document {
+class Contract extends Documents {
   constructor(title: string, creationDate: Date, author: string) {
     super(title, creationDate, author);
   }
 
-  clone(): Document {
+  clone(): Documents {
     const clone = new Contract(this.title, this.creationDate, this.author);
     clone.setContent(this.content);
     return clone;
