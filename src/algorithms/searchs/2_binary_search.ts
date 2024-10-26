@@ -1,4 +1,4 @@
-import {generateArrayNumbers} from "../utils/generateArrayNumbers";
+import {generateArrayNumbers} from "../../utils/generateArrayNumbers";
 
 const arrayNumbers: Array<number> = generateArrayNumbers(16, false)
 let iterationCounter = 0

@@ -35,7 +35,7 @@ class BinaryTree {
   }
 
 
-  preOrder(vertex: Vertex, callback: (any) => void) {
+  preOrder(vertex: Vertex | null, callback: (any) => void) {
     if (!vertex) {
       return
     }
@@ -46,7 +46,7 @@ class BinaryTree {
     this.preOrder(vertex.right, callback)
   }
 
-  postOrder(vertex: Vertex, callback: (any) => void) {
+  postOrder(vertex: Vertex | null, callback: (any) => void) {
     if (!vertex) {
       return
     }
@@ -58,7 +58,7 @@ class BinaryTree {
     }
   }
 
-  inOrder(vertex: Vertex, callback: (any) => void) {
+  inOrder(vertex: Vertex | null, callback: (any) => void) {
     if (!vertex) {
       return
     }
@@ -95,10 +95,10 @@ class BinaryTree {
       const vertex = queue.shift()
       callback(vertex)
 
-      if (vertex.left) {
+      if (vertex?.left) {
         queue.push(vertex.left)
       }
-      if (vertex.right) {
+      if (vertex?.right) {
         queue.push(vertex.right)
       }
 

@@ -2,7 +2,7 @@
 //и предоставляет к нему глобалюную точку доступа
 
 
-import {generateRandomNumber} from "../../../utils/generateArrayNumbers";
+import {generateRandomNumber} from "../../../../utils/generateArrayNumbers";
 
 class DataBase {
   private static instance: DataBase
